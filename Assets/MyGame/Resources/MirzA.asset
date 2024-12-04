@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e2265bcfa8399b409fc81384136451b, type: 3}
+  m_Name: MirzA
+  m_EditorClassIdentifier: 
+  studentName: Mirza Dzinic
+  eyeColor: {r: 0.41509432, g: 0.19327591, b: 0, a: 0}
+  studentImage: {fileID: 21300000, guid: 20a8ec1f902097442a2065a2c2ac6688, type: 3}
+  studentClip: {fileID: 8300000, guid: 6aabadf22c7e29747bb23b2e13a0f3eb, type: 3}

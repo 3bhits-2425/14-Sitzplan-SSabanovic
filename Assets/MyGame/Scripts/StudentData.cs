@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NewStudent", menuName = "Seatplan/Student")]
-public class NewBehaviourScript : ScriptableObject
+public class StudentData : ScriptableObject
 {
     public string studentName;
     public Color eyeColor;

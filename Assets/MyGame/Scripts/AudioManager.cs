@@ -54,9 +54,9 @@ public class AudioManager : MonoBehaviour
     {
         foreach (Sound oneSound in sounds)
         {
-            if oneSound.name == soundName)
+            if (oneSound.name == soundName)
             {
-                return s;
+                return oneSound;
             }
         }
         return null;
