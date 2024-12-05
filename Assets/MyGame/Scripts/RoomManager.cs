@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class RoomManager : MonoBehaviour
 {
     [SerializeField] TableLayoutData tableLayout;
     [SerializeField] StudentData[] students;
     [SerializeField] GameObject tablePrefab;
-    [SerializeField] GameObject chair;
+    [SerializeField] GameObject chairPrefab;
 
     // Start is called before the first frame update
     private void Start()
@@ -20,28 +22,15 @@ public class RoomManager : MonoBehaviour
                 GameObject table = Instantiate(tablePrefab, tablePosition, Quaternion.identity, transform);
                 Debug.Log("x:" + (col * tableLayout.tableSpacing));
 
-                //Sessel platzieren
-                Transform pos1 = table.transform.Find("pos1");
-                Transform pos2 = table.transform.Find("pos2");
-
-                if (pos1)
+                // Sessel platzieren
+                Transform[] chairPosition = table.GetComponentsInChildren<Transform>();
+                foreach (Transform chairPos in chairPosition)
                 {
-                    Debug.Log("pos1 gefunden: " + pos1.position);
-                    Instantiate(chairPrefab, pos1.position, pos1.rotation, table.transform);
-                }
-                else
-                {
-                    Debug.LogWarning("pos1 nicht gefunden!");
-                }
-                
-                if (pos2)
-                {
-                    Debug.Log("pos2 gefunden: " + pos2.position);
-                    Instantiate(chairPrefab, pos2.position, pos2.rotation, table.transform);
-                }
-                else
-                {
-                    Debug.LogWarning("pos2 nicht gefunden!");
+                    if (chairPos.CompareTag("chair"))
+                    {
+                        GameObject chair = Instantiate(chairPrefab, chairPos.position, chairPos.rotation, table.transform);
+                        Debug.Log("Found Chair");
+                    }
                 }
 
 
