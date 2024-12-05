@@ -11,6 +11,11 @@ Das Projekt handelt um ein Virtuellen Sitzplan, wo wir jewiligen Schuelern eine 
 Jeder Schueler hat auch gewisse Eigenschaften, wie den Namen natuerlich, die Augenfarbe, Audio und ein Bild des Schuelers. 
 Nachdem wir unsere Schueler Klasse erstellt haben, haben wir ein 3D Tisch und ein 3D Stuhl erstellt und aus diesen ein 
 Prefab gemacht. Die Tische haben wir dann dynamisch generiert lassen nach Reihen und Spalten.
+
+### Lessons Learned
+
+Ich weiß jetzt wie man ein Prefab erstellt
+Fotos & Audios in Projekte einfügen
  
 <<<<<<< HEAD
 # Wo wollen wir
