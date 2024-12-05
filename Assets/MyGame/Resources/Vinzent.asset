@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e2265bcfa8399b409fc81384136451b, type: 3}
-  m_Name: Mirza
+  m_Name: Vinzent
   m_EditorClassIdentifier: 
-  studentName: Mirza Dzinic
-  eyeColor: {r: 0.41509432, g: 0.19327591, b: 0, a: 0}
-  studentImage: {fileID: 21300000, guid: 20a8ec1f902097442a2065a2c2ac6688, type: 3}
-  studentClip: {fileID: 8300000, guid: 6aabadf22c7e29747bb23b2e13a0f3eb, type: 3}
+  studentName: Davidd Dammerer
+  eyeColor: {r: 0.46226418, g: 0.23976965, b: 0, a: 0}
+  studentImage: {fileID: 21300000, guid: fbee446a0ed803740a33eec858485704, type: 3}
+  studentClip: {fileID: 8300000, guid: 9313728c22c7be8478480d5339bbb095, type: 3}
