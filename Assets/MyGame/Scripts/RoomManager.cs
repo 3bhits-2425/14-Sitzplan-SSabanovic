@@ -7,7 +7,7 @@ public class RoomManager : MonoBehaviour
     [SerializeField] TableLayoutData tableLayout;
     [SerializeField] StudentData[] students;
     [SerializeField] GameObject tablePrefab;
-    [SerializeField] GameObject chairPrefab;
+    [SerializeField] GameObject chair;
 
     // Start is called before the first frame update
     private void Start()
