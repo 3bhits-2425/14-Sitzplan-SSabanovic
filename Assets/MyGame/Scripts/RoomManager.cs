@@ -1,43 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 public class RoomManager : MonoBehaviour
 {
-    [SerializeField] TableLayoutData tableLayout;
-    [SerializeField] StudentData[] students;
-    [SerializeField] GameObject tablePrefab;
-    [SerializeField] GameObject chairPrefab;
+    [SerializeField] private TableLayoutData tableLayout;
+    [SerializeField] private StudentData[] students;
+    [SerializeField] private GameObject tablePrefab;
+    [SerializeField] private GameObject chairPrefab;
+    [SerializeField] private GameObject schuelerPrefab;
 
-    // Start is called before the first frame update
-    private void Start()
+    void Start()
     {
+        int createdSchueler = 0;
+
         for (int row = 0; row < tableLayout.rows; row++)
         {
             for (int col = 0; col < tableLayout.columns; col++)
             {
-                Vector3 tablePosition = new Vector3(col * tableLayout.tableSpacing, 0, row * tableLayout.tableSpacing);
-                GameObject table = Instantiate(tablePrefab, tablePosition, Quaternion.identity, transform);
-                Debug.Log("x:" + (col * tableLayout.tableSpacing));
+                if (createdSchueler >= students.Length)
+                    return;
 
-                // Sessel platzieren
-                Transform[] chairPosition = table.GetComponentsInChildren<Transform>();
-                foreach (Transform chairPos in chairPosition)
+                Vector3 tablePosition = new Vector3(col * tableLayout.tableSpaceing, 0, row * tableLayout.tableSpaceing);
+                GameObject table = Instantiate(tablePrefab, tablePosition, Quaternion.identity, transform);
+
+                Transform[] childPositions = table.GetComponentsInChildren<Transform>();
+                foreach (Transform childPos in childPositions)
                 {
-                    if (chairPos.CompareTag("chair"))
+                    if (createdSchueler >= students.Length)
+                        break;
+
+                    if (childPos.CompareTag("Chair"))
                     {
-                        GameObject chair = Instantiate(chairPrefab, chairPos.position, chairPos.rotation, table.transform);
-                        Debug.Log("Found Chair");
+                        Instantiate(chairPrefab, childPos.position, childPos.rotation, table.transform);
+                    }
+                    else if (childPos.CompareTag("Schueler"))
+                    {
+                        Instantiate(schuelerPrefab, childPos.position, childPos.rotation, table.transform);
+                        createdSchueler++;
                     }
                 }
-
-
             }
         }
-
-        // Update is called once per frame
-        
     }
 }

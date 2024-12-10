@@ -10,10 +10,10 @@ public class AudioMenue : MonoBehaviour
 
     [SerializeField] private AudioSource myAudioSource;
 
-    // 2 Variablen, um den Button und den Text zu finden
+    // 2 Variablen, um den Button und den Text zu finden 
 
     private GameObject playPauseButton; // Der Button 
-    private TMP_Text playPauseButtonText; // das Textfeld
+    private TMP_Text playPauseButtonText; // das Textfeld 
 
 
     void Awake()
@@ -26,29 +26,29 @@ public class AudioMenue : MonoBehaviour
 
         // finde das Textfeld 
         playPauseButtonText = playPauseButton.GetComponentInChildren<TMP_Text>();
+       
     }
 
     public void PlayAudio()
     {
         // AudioSource.play
-        // Spiele die Audio-Source
-
-        myAudioSource.Play();
+        // Spiele die Audio-Source 
+        FindAnyObjectByType<AudioManager>().Play("10-mySound-mhamzic");
     }
 
     public void PauseAudio()
     {
-        myAudioSource.Pause();
+        FindAnyObjectByType<AudioManager>().Pause("10-mySound-mhamzic");
     }
 
-    public void StopAudio()
-    {
+    public void StopAudio() { 
+    
         myAudioSource.Stop();
     }
 
     public void PlayPauseAudio()
     {
-        if (myAudioSource.isPlaying)
+       if (myAudioSource.isPlaying)
         {
             myAudioSource.Pause();
             //playPauseButtonText.text = "Play";
@@ -73,6 +73,6 @@ public class AudioMenue : MonoBehaviour
             playPauseButtonText.text = "Pause";
         }
 
-    }
+        }
 
 }

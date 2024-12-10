@@ -1,15 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Instanzvariablen
+    // Instanzvariablen 
 
     [SerializeField] private Sound[] sounds;
+    private AudioManager singleton;
 
     private void Awake()
     {
+        // Stelle sicher, dass nur ein Element vom Typ AudioManager erzeugt werden kann
+        if (singleton == null)
+        {
+            singleton = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+
+        }
+
+        DontDestroyOnLoad(gameObject);
+
+
         foreach (Sound s in sounds)
         {
             // Erzeuge zur Laufzeit ein AudioSource Objekt
@@ -28,47 +46,37 @@ public class AudioManager : MonoBehaviour
         */
     }
 
-    void Play(string soundName)
+    public void Play(string soundName)
+    {
+        FindSound(soundName).audioSource.Play();
+    }
+
+    public void Pause(string soundName)
+    {
+        FindSound(soundName).audioSource.Pause();
+    }
+
+    private Sound FindSound(string soundName)
     {
         foreach (Sound s in sounds)
         {
             if (s.name == soundName)
             {
-                s.audioSource.Play();
+                return s;
             }
         }
-    }
-
-    void Pause(string soundName)
-    {
-        foreach (Sound oneSound in sounds)
-        {
-            if (oneSound.name == soundName)
-            {
-                oneSound.audioSource.Pause();
-            }
-        }
-    }
-
-    private Sound findSound(string soundName)
-    {
-        foreach (Sound oneSound in sounds)
-        {
-            if (oneSound.name == soundName)
-            {
-                return oneSound;
-            }
-        }
+        Debug.Log("Sound wurde nicht gefunden!");
         return null;
     }
 
+        void Start()
+        {
 
+        }
 
-    void Start()
-    {
-    }
+        void Update()
+        {
 
-    void Update()
-    {
-    }
+        }
+    
 }

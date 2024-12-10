@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 41340491aa429a94ab93e0aba9ff06ae
+  productGUID: 538b8d59f071e9644b4d6b2efe125092
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 14-Sitzplan-SSabanovic
+  productName: 10-Sitzplan-mhamzic
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -625,14 +625,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 14-Sitzplan-SSabanovic
+  metroPackageName: 10-Sitzplan-mhamzic
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 14-Sitzplan-SSabanovic
+  metroApplicationDescription: 10-Sitzplan-mhamzic
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -700,11 +700,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 78962a75-824c-4931-8bea-20a9e1e80a06
+  cloudProjectId: e989c3ab-ee4e-487c-a20d-12666f7b1f8a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 14-Sitzplan-SSabanovic
-  organizationId: semsab
+  projectName: 10-Sitzplan-mhamzic
+  organizationId: m_hmzc
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
